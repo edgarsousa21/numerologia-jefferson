@@ -5,10 +5,10 @@ body {
     padding: 0;
     background: #f4f4f9;
     color: #333;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 div.img-logo {
@@ -22,7 +22,6 @@ div.img-logo {
 
 img.logo {
     width: 200px;
-    /* position: relative; */
     top: 20px;
 }
 
@@ -404,6 +403,8 @@ button:hover {
     img.logo {
         width: 100px;
         position: relative;
+        top: 5px;
+        margin: auto;
     }
 
 
