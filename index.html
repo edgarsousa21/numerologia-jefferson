@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="./src/design.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Numerológica</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="img-logo">
+        <img class="logo" src="./src/logo.png" alt="logo">
+    </div>
+    <div class="container">
+        <!-- Cabeçalho -->
+
+        <header>            
+            <h1>Análise Numerológica</h1>
+            <p>Descubra o que seu nome e data de nascimento revelam sobre você. Prepare-se para se surpreender!</p>
+        </header>
+
+        <!-- Formulário -->
+        <section id="form-section">
+            <div class="form-group">
+                <label for="input-name"><b>Nome Completo (Igual ao da Certidão de Nascimento):</b></label>
+                <input type="text" id="input-name" class="form-control" placeholder="Digite seu nome completo">
+            </div>
+            <div class="form-group">
+                <label for="birthdate"><strong>Data de Nascimento:</strong></label>
+                <input type="text" id="birthdate" class="form-control" placeholder="DD/MM/AAAA">
+            </div>
+            <button id="button-calculate" class="btn">Calcular</button>
+        </section>
+
+        <!-- Resultados -->
+        <section id="results-section" class="hidden">
+            <h2>Clique nos números para mais informações</h2>
+            <div class="results-container">
+                <!-- Caixa para Motivação -->
+                <div class="result-box" id="motivacao-box" onclick="abrirModal('Motivação', document.getElementById('motivacao-result').textContent)">
+                    <h3>Motivação</h3>
+                    <p id="motivacao-result">--</p>
+                </div>
+                <!-- Caixa para Impressão -->
+                <div class="result-box" id="impressao-box" onclick="abrirModal('Impressão', document.getElementById('impressao-result').textContent)">
+                    <h3>Impressão</h3>
+                    <p id="impressao-result">--</p>
+                </div>
+                <!-- Caixa para Expressão -->
+                <div class="result-box" id="expressao-box" onclick="abrirModal('Expressão', document.getElementById('expressao-result').textContent)">
+                    <h3>Expressão</h3>
+                    <p id="expressao-result">--</p>
+                </div>
+                <!-- Caixa para Destino -->
+                <div class="result-box" id="destino-box" onclick="abrirModal('Destino', document.getElementById('destino-result').textContent)">
+                    <h3>Destino</h3>
+                    <p id="destino-result">--</p>
+                </div>
+                <!-- Caixa para Missão -->
+                <div class="result-box" id="missao-box" onclick="abrirModal('Missão', document.getElementById('missao-result').textContent)">
+                    <h3>Missão</h3>
+                    <p id="missao-result">--</p>
+                </div>
+            </div>
+
+            <!-- Triângulo -->
+            <div id="triangle-section">
+                <h3>Pirâmide Invertida</h3>
+                <div id="triangle-container"></div>
+            </div>
+
+            <!-- Sequências Negativas -->
+<div id="negative-sequences">
+    <h3>Sequências Negativas</h3>
+    <p class="negative-sequences-intro">Os números que aparecem em vermelho acima representam bloqueios presentes em sua vida, que podem estar dificultando sua prosperidade. Descubra o que cada um deles significa:👇</p>
+    <p id="negative-sequences-text">--</p>
+</div>
+
+<div class="negative-sequences-buttons">
+    <a href="https://wa.me/+5534996812576?text=Oi%2C%20fiz%20a%20an%C3%A1lise%20do%20meu%20nome%20e%20gostaria%20de%20entender%20melhor." class="btn btn-primary" target="_blank">Quer corrigir as energias do seu nome? Clique Aqui!</a>
+    <a href="https://meumapanumerologico.com.br/" class="btn btn-success" target="_blank">Quer entender mais? Clique Aqui</a>
+</div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="modal-title"></h2>
+                <p id="modal-body"></p>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" onclick="fecharModal()">Fechar</button>
+                    <a href="https://meumapanumerologico.com.br/" class="btn btn-primary" target="_blank">Quer entender mais? Clique Aqui!</a>
+                    <a href="https://wa.me/+5534996812576?text=Ol%C3%A1%2C%20fiz%20a%20an%C3%A1lise%20do%20meu%20nome%2C%20poderia%20me%20explicar%20melhor%3F" class="btn btn-success" target="_blank">Está com dúvidas? Entre em contato comigo!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

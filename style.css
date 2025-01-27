@@ -1,0 +1,393 @@
+/* Geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.img-logo{
+    width: auto;
+    height: auto;
+}
+
+/* Container centralizado */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    margin-bottom: 20px;
+}
+
+img.logo {
+    width: 200px;
+    /* position: absolute; */
+}
+
+h1 {
+    color: #5a5af0;
+}
+
+p {
+    margin: 10px 0 20px 0;
+}
+
+/* Estilizando o formulário */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #5a5af0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #4040c7;
+}
+
+/* Escondendo o conteúdo extra até ele ser exibido */
+.hidden {
+    display: none;
+}
+
+/* Correção do botão/calculadora */
+.btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #5a5af0;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4040c7;
+}
+
+/* Ajuste para o modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    /* Modal oculto por padrão */
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal.active {
+    display: flex;
+    /* Exibe o modal quando ativado */
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.text-red {
+    color: red;
+    font-weight: bold;
+}
+
+.triangulo-nome {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Botões do modal */
+.modal-footer .btn {
+    display: block;
+    /* Cada botão ocupa uma linha inteira */
+    width: 100%;
+    /* Botões ocupam toda a largura */
+    margin: 10px 0;
+    /* Espaçamento entre os botões */
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    /* Remove sublinhado dos links */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+}
+
+/* Botão Vermelho (Fechar) */
+.modal-footer .btn-danger {
+    background-color: #d9534f;
+    color: white;
+}
+
+.modal-footer .btn-danger:hover {
+    background-color: #c9302c;
+}
+
+/* Botão Azul (Explicação) */
+.modal-footer .btn-primary {
+    background-color: #0275d8;
+    color: white;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #025aa5;
+}
+
+/* Botão Verde (WhatsApp) */
+.modal-footer .btn-success {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-footer .btn-success:hover {
+    background-color: #449d44;
+}
+
+/* Botões do modal - Garantindo prioridade */
+#modal .modal-footer .btn {
+    display: block !important;
+    /* Cada botão ocupa uma linha */
+    width: 100% !important;
+    /* Botões ocupam toda a largura */
+    margin: 10px 0 !important;
+    /* Espaçamento entre botões */
+    padding: 10px !important;
+    border: none !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    /* Remove sublinhado */
+    border-radius: 5px !important;
+    cursor: pointer !important;
+}
+
+#modal .modal-footer .btn-danger {
+    background-color: #d9534f !important;
+    color: white !important;
+}
+
+#modal .modal-footer .btn-danger:hover {
+    background-color: #c9302c !important;
+}
+
+#modal .modal-footer .btn-primary {
+    background-color: #0275d8 !important;
+    color: white !important;
+}
+
+#modal .modal-footer .btn-primary:hover {
+    background-color: #025aa5 !important;
+}
+
+#modal .modal-footer .btn-success {
+    background-color: #5cb85c !important;
+    color: white !important;
+}
+
+#modal .modal-footer .btn-success:hover {
+    background-color: #449d44 !important;
+}
+
+/* Estilo para as caixas dos resultados */
+.result-box {
+    border: 1px solid #d3d3d3;
+    /* Borda cinza clara */
+    padding: 10px;
+    /* Espaçamento interno */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    background-color: #ffffff;
+    /* Fundo branco */
+    text-align: center;
+    /* Centraliza o texto */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sombra leve para profundidade */
+    margin: 10px;
+    /* Espaçamento entre as caixas */
+    font-size: 1.2em;
+    /* Tamanho maior para os números */
+    color: #333;
+    /* Cor do texto */
+    font-weight: bold;
+    /* Texto em negrito */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Animação suave */
+}
+
+.result-box:hover {
+    transform: scale(1.05);
+    /* Leve aumento no hover */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra mais pronunciada no hover */
+}
+
+/* Estilo do Triângulo */
+#triangle-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#triangle-container {
+    font-family: monospace;
+    /* Fonte que mantém alinhamento de caracteres */
+    line-height: 1.5;
+    /* Espaçamento entre as linhas do triângulo */
+    margin-top: 10px;
+}
+
+/* Sequências Negativas */
+#negative-sequences {
+    margin-top: 20px;
+    text-align: left;
+    /* Alinha o texto à esquerda para facilitar leitura */
+}
+
+#negative-sequences h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #5a5af0;
+    /* Azul para destaque */
+}
+
+#negative-sequences p {
+    font-size: 1em;
+    line-height: 1.6;
+    /* Melhor espaçamento para textos longos */
+}
+
+/* Estilo para cada texto das Sequências Negativas */
+.negative-sequence-item {
+    margin-bottom: 40px;
+    /* Espaçamento entre os textos (aumentado para 40px) */
+    line-height: 1.8;
+    /* Espaçamento confortável entre as linhas dentro de cada bloco */
+    text-align: left;
+    /* Alinha cada bloco de texto à esquerda */
+}
+
+
+#negative-sequences h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #5a5af0;
+    /* Azul para destaque */
+}
+
+#negative-sequences p {
+    font-size: 1em;
+    line-height: 1.6;
+    /* Melhor espaçamento para textos longos */
+}
+
+/* Estilo para os números das sequências negativas */
+.negative-number {
+    color: red;
+    /* Cor vermelha */
+    font-weight: bold;
+    /* Mantém o negrito */
+}
+
+/* Estilo para o texto introdutório das Sequências Negativas */
+.negative-sequences-intro {
+    font-size: 1em;
+    /* Tamanho da fonte */
+    font-style: italic;
+    /* Estilo itálico para destacar */
+    margin-bottom: 15px;
+    /* Espaçamento abaixo do texto */
+    color: #555;
+    /* Cor cinza para suavizar */
+}
+
+/* Botões abaixo das Sequências Negativas */
+.negative-sequences-buttons {
+    margin-top: 20px;
+    /* Espaçamento acima dos botões */
+    text-align: center;
+    /* Centraliza os botões */
+}
+
+.negative-sequences-buttons .btn {
+    display: block;
+    /* Ocupa toda a largura no celular */
+    width: 100%;
+    /* Garante responsividade */
+    margin: 10px auto;
+    /* Espaçamento entre os botões */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    /* Remove sublinhado */
+    cursor: pointer;
+}
+
+.negative-sequences-buttons .btn-primary {
+    background-color: #0275d8;
+    color: white;
+}
+
+.negative-sequences-buttons .btn-primary:hover {
+    background-color: #025aa5;
+}
+
+.negative-sequences-buttons .btn-success {
+    background-color: #5cb85c;
+    color: white;
+}
+
+.negative-sequences-buttons .btn-success:hover {
+    background-color: #449d44;
+}
